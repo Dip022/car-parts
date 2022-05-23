@@ -1,0 +1,38 @@
+[
+  {
+    "_id": 1,
+    "name": "B&I® - Steering Wheel",
+    "price": 355,
+    "image": "https://i.ibb.co/L0S3YMw/Steering.jpg"
+  },
+  {
+    "_id": 2,
+    "name": "B&I® - Steering Wheel",
+    "price": 355,
+    "image": "https://i.ibb.co/L0S3YMw/Steering.jpg"
+  },
+  {
+    "_id": 3,
+    "name": "B&I® - Steering Wheel",
+    "price": 355,
+    "image": "https://i.ibb.co/L0S3YMw/Steering.jpg"
+  },
+  {
+    "_id": 4,
+    "name": "B&I® - Steering Wheel",
+    "price": 355,
+    "image": "https://i.ibb.co/L0S3YMw/Steering.jpg"
+  },
+  {
+    "_id": 5,
+    "name": "B&I® - Steering Wheel",
+    "price": 355,
+    "image": "https://i.ibb.co/L0S3YMw/Steering.jpg"
+  },
+  {
+    "_id": 6,
+    "name": "B&I® - Steering Wheel",
+    "price": 355,
+    "image": "https://i.ibb.co/L0S3YMw/Steering.jpg"
+  }
+]

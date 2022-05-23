@@ -3,9 +3,9 @@ import Navbar from "../Navbar";
 
 const Header = () => {
   return (
-    <div>
+    <header className="bg-accent sticky top-0  z-20 px-12">
       <Navbar></Navbar>
-    </div>
+    </header>
   );
 };
 
