@@ -8,6 +8,7 @@ import Register from "./pages/Register/Register";
 import Header from "./sherd/Header/Header";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Forgotten from "./pages/Login/Forgotten";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/purchase" element={<Purchase />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/forgotten" element={<Forgotten />}></Route>
       </Routes>
       <ToastContainer />
     </div>

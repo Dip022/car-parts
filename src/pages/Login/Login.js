@@ -1,11 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import google from "../../image/icon/google.png";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
+
+  const navigate = useNavigate();
 
   const onSubmit = (data) => console.log(data);
 
@@ -39,7 +41,12 @@ const Login = () => {
             />
           </form>
         </div>
-        <button className=" mt-4 mb-4 text-primary">Forgotten password?</button>
+        <button
+          onClick={() => navigate("/forgotten")}
+          className=" mt-4 mb-4 text-primary"
+        >
+          Forgotten password?
+        </button>
         <p className="mb-4 text-1xl">
           Not an account?{" "}
           <Link to="/register" className="text-primary">

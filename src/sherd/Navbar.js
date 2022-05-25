@@ -1,7 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.inti";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+
+  const menuItem = (
+    <>
+      <li>
+        <Link to="/home">Home</Link>
+      </li>
+      <li>
+        <Link to="/parts">Parts</Link>
+      </li>
+      <li>
+        <Link to="/home">Home</Link>
+      </li>
+      <li>
+        <Link to="/home">Home</Link>
+      </li>
+      {user ? (
+        <li>
+          <Link to="" onClick={() => signOut(auth)}>
+            Logout
+          </Link>
+        </li>
+      ) : (
+        <>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        </>
+      )}
+    </>
+  );
   return (
     <div className="navbar justify-between bg-accent text-white">
       <div className="navbar-start bg-accent">
@@ -26,33 +63,14 @@ const Navbar = () => {
             tabIndex="0"
             className="menu menu-compact dropdown-content mt-2 shadow  bg-black w-52"
           >
-            <li>
-              <Link to="/home">Home</Link>
-            </li>
+            {menuItem}
           </ul>
         </div>
         <span className="btn btn-ghost normal-case text-xl">daisyUI</span>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal justify-between p-0 text-1.5xl">
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/parts">Parts</Link>
-          </li>
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/home">Home</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
+          {menuItem}
         </ul>
       </div>
     </div>
