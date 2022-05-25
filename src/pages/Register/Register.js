@@ -2,8 +2,20 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import google from "../../image/icon/google.png";
+import {
+  useUpdateProfile,
+  useCreateUserWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.inti";
+import { toast } from "react-toastify";
+import Loading from "../../sherd/Loading/Loading";
 
 const Register = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
+
+  const [updateProfile] = useUpdateProfile(auth);
+
   const {
     register,
     handleSubmit,
@@ -11,7 +23,18 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  if (loading) {
+    return <Loading></Loading>;
+  }
+  console.log(user);
+
+  const onSubmit = async (data) => {
+    if (data.password === data.confirmPassword) {
+      await createUserWithEmailAndPassword(data.email, data.password);
+      await updateProfile({ displayName: data.name });
+      toast.success("register success");
+    }
+  };
 
   return (
     <div
