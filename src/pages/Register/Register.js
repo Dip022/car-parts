@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import google from "../../image/icon/google.png";
@@ -11,17 +11,14 @@ import { toast } from "react-toastify";
 import Loading from "../../sherd/Loading/Loading";
 
 const Register = () => {
+  const [passError, setPassError] = useState("");
+
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile] = useUpdateProfile(auth);
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   if (loading) {
     return <Loading></Loading>;
@@ -33,6 +30,8 @@ const Register = () => {
       await createUserWithEmailAndPassword(data.email, data.password);
       await updateProfile({ displayName: data.name });
       toast.success("register success");
+    } else {
+      setPassError("Possword and Conform password not match");
     }
   };
 
@@ -74,9 +73,11 @@ const Register = () => {
               {...register("confirmPassword")}
               type="password"
               placeholder="Confirm Password"
-              className="input input-bordered w-full md:w-96"
+              className="input input-bordered w-full md:w-96 mb-4"
               required
             />
+            <span className="text-red-500">{passError}</span>
+            <span className="text-red-500">{error}</span>
             <input
               type="submit"
               value="Register"

@@ -5,12 +5,7 @@ import "./Login.css";
 import google from "../../image/icon/google.png";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => console.log(data);
 
