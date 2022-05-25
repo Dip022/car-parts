@@ -3,7 +3,6 @@ import Product from "../Product/Product";
 
 const Parts = () => {
   const [parts, setParts] = useState([]);
-  console.log(parts);
   useEffect(() => {
     fetch("product.json")
       .then((res) => res.json())

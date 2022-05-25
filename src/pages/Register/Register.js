@@ -1,10 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import "./Login.css";
 import google from "../../image/icon/google.png";
 
-const Login = () => {
+const Register = () => {
   const {
     register,
     handleSubmit,
@@ -21,34 +20,51 @@ const Login = () => {
     >
       <div className=" shadow-lg p-10 shadow-gray-350 rounded-sm">
         <div>
-          <h1 className="text-center text-3xl font-bold">Login</h1>
+          <h1 className="text-center text-3xl font-bold">Register</h1>
           <form onSubmit={handleSubmit(onSubmit)} className="md:inline-grid">
+            <label className="mb-1 text-sm">Name</label>
+            <input
+              {...register("name")}
+              type="name"
+              placeholder="Name"
+              className="input input-bordered w-full md:w-96 mb-4"
+              required
+            />
             <label className="mb-1 text-sm">Email Address</label>
             <input
               {...register("email")}
               type="email"
-              placeholder="Email Address"
+              placeholder="email"
               className="input input-bordered w-full md:w-96 mb-4"
+              required
             />
             <label className="mb-1 text-sm">Password</label>
             <input
               {...register("password")}
               type="password"
               placeholder="Password"
-              className="input input-bordered w-full md:w-96 "
+              className="input input-bordered w-full md:w-96 mb-4"
+              required
+            />
+            <label className="mb-1 text-sm">Confirm Password</label>
+            <input
+              {...register("confirmPassword")}
+              type="password"
+              placeholder="Confirm Password"
+              className="input input-bordered w-full md:w-96"
+              required
             />
             <input
               type="submit"
-              value="Login"
+              value="Register"
               className="btn md:w-96 w-full mt-4 btn-primary text-white"
             />
           </form>
         </div>
-        <button className=" mt-4 mb-4 text-primary">Forgotten password?</button>
-        <p className="mb-4 text-1xl">
-          Not an account?{" "}
-          <Link to="/register" className="text-primary">
-            Register
+        <p className="mt-4 mb-4 text-1xl">
+          Already have an account?{" "}
+          <Link to="/login" className="text-primary">
+            Login
           </Link>
         </p>
         <div>
@@ -63,4 +79,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

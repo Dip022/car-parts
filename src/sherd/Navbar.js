@@ -6,7 +6,7 @@ const Navbar = () => {
     <div className="navbar justify-between bg-accent text-white">
       <div className="navbar-start bg-accent">
         <div className="dropdown text-2xl">
-          <label tabindex="0" className="btn btn-accent lg:hidden">
+          <label tabIndex="0" className="btn btn-accent lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 text-white"
@@ -15,15 +15,15 @@ const Navbar = () => {
               stroke="currentColor"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
           </label>
           <ul
-            tabindex="0"
+            tabIndex="0"
             className="menu menu-compact dropdown-content mt-2 shadow  bg-black w-52"
           >
             <li>
@@ -48,10 +48,10 @@ const Navbar = () => {
             <Link to="/home">Home</Link>
           </li>
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/login">Login</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </li>
         </ul>
       </div>
