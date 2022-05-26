@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import google from "../../image/icon/google.png";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useUpdateProfile,
   useCreateUserWithEmailAndPassword,
@@ -9,6 +8,7 @@ import {
 import auth from "../../firebase.inti";
 import { toast } from "react-toastify";
 import Loading from "../../sherd/Loading/Loading";
+import SocialLogin from "../../sherd/SocialLogin/SocialLogin";
 
 const Register = () => {
   const [passError, setPassError] = useState("");
@@ -17,6 +17,8 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile] = useUpdateProfile(auth);
+
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm();
 
@@ -30,6 +32,7 @@ const Register = () => {
       await createUserWithEmailAndPassword(data.email, data.password);
       await updateProfile({ displayName: data.name });
       toast.success("register success");
+      navigate("/home");
     } else {
       setPassError("Possword and Conform password not match");
     }
@@ -77,7 +80,7 @@ const Register = () => {
               required
             />
             <span className="text-red-500">{passError}</span>
-            <span className="text-red-500">{error}</span>
+            <span className="text-red-500">{error?.message}</span>
             <input
               type="submit"
               value="Register"
@@ -93,10 +96,7 @@ const Register = () => {
         </p>
         <div>
           <div className="or text-center mb-5">or</div>
-          <button className="flex w-full aling-center justify-center border-2 border-gray-400 p-2 rounded-lg">
-            <img className="w-7 mr-2" src={google} alt="" />{" "}
-            <span className="text-xl">Sign in With Google</span>
-          </button>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

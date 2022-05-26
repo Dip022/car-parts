@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
-import google from "../../image/icon/google.png";
+import SocialLogin from "../../sherd/SocialLogin/SocialLogin";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../firebase.inti";
+import Loading from "../../sherd/Loading/Loading";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
 
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+
   const navigate = useNavigate();
 
-  const onSubmit = (data) => console.log(data);
+  useEffect(() => {
+    if (user) {
+      navigate("/home");
+      toast.success("Sign in success");
+    }
+  }, [user, navigate]);
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password);
+  };
 
   return (
     <div
@@ -32,8 +52,9 @@ const Login = () => {
               {...register("password")}
               type="password"
               placeholder="Password"
-              className="input input-bordered w-full md:w-96 "
+              className="input input-bordered w-full md:w-96 mb-4"
             />
+            <span className="text-red-500">{error?.message}</span>
             <input
               type="submit"
               value="Login"
@@ -55,10 +76,7 @@ const Login = () => {
         </p>
         <div>
           <div className="or text-center mb-5">or</div>
-          <button className="flex w-full aling-center justify-center border-2 border-gray-400 p-2 rounded-lg">
-            <img className="w-7 mr-2" src={google} alt="" />{" "}
-            <span className="text-xl">Sign in With Google</span>
-          </button>
+          <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
