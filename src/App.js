@@ -9,6 +9,8 @@ import Header from "./sherd/Header/Header";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Forgotten from "./pages/Login/Forgotten";
+import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
+import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/forgotten" element={<Forgotten />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route index element={<MyProfile />}></Route>
+        </Route>
       </Routes>
       <ToastContainer />
     </div>
