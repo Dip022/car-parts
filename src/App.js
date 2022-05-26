@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Forgotten from "./pages/Login/Forgotten";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
+import PageNotFound from "./sherd/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<MyProfile />}></Route>
         </Route>
+        <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
       <ToastContainer />
     </div>
