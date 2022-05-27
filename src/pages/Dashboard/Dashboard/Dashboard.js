@@ -50,7 +50,7 @@ const Dashboard = () => {
                   <Link to="make-admin">Make Admin</Link>
                 </li>
                 <li className="mb-4">
-                  <Link to="">Manage All Orders</Link>
+                  <Link to="manage-order">Manage All Orders</Link>
                 </li>
                 <li className="mb-4">
                   <Link to="">Manage Products</Link>
