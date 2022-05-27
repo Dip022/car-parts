@@ -1,11 +1,11 @@
 import React from "react";
 
-const ManageAllOrdersRow = ({ order }) => {
+const ManageAllOrdersRow = ({ order, index }) => {
   const { productImage, productName, productPrice, quantity } = order;
 
   return (
     <tr>
-      <th>No</th>
+      <td>{index + 1}</td>
       <td>
         <div class="avatar">
           <div class="w-24 rounded-full">

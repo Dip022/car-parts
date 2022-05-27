@@ -8,6 +8,7 @@ const Parts = () => {
       .then((res) => res.json())
       .then((data) => setParts(data));
   }, []);
+
   return (
     <div className="px-12 mt-20 mb-20">
       <h1 className="text-center text-4xl font-bold mb-8 text-primary">

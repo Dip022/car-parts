@@ -31,10 +31,11 @@ const ManageAllOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order) => (
+              {orders.map((order, index) => (
                 <ManageAllOrdersRow
                   order={order}
                   key={order._id}
+                  index={index}
                 ></ManageAllOrdersRow>
               ))}
             </tbody>

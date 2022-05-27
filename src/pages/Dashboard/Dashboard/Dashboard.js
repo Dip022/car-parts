@@ -53,7 +53,7 @@ const Dashboard = () => {
                   <Link to="manage-order">Manage All Orders</Link>
                 </li>
                 <li className="mb-4">
-                  <Link to="">Manage Products</Link>
+                  <Link to="manage-produts">Manage Products</Link>
                 </li>
               </>
             )}
