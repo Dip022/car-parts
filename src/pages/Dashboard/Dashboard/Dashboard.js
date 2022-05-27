@@ -11,19 +11,22 @@ const Dashboard = () => {
     setUseMenu(!useMemu);
   };
   return (
-    <div style={{ height: "100vh" }} className="flex truncate">
+    <div className="flex truncate">
       <div
         className={`${
           useMemu ? "left-0" : "-left-52"
-        } " bg-gray-900 pt-12 absolute lg:static h-full px-8 truncate"`}
+        } " bg-gray-900 pt-12 absolute lg:static h-auto px-8 truncate"`}
       >
         <div>
           <ul className="text-white text-md">
             <li className="mb-4">
-              <Link to="myProfile">My Profile</Link>
+              <Link to="/dashboard">My Profile</Link>
             </li>
             <li className="mb-4">
               <Link to="my-orders">My Orders</Link>
+            </li>
+            <li className="mb-4">
+              <Link to="my-reviews">My Reviews</Link>
             </li>
             <li className="mb-4">
               <Link to="">Make Admin</Link>

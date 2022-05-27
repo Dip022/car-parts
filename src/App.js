@@ -14,6 +14,7 @@ import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import PageNotFound from "./sherd/PageNotFound/PageNotFound";
 import Footer from "./sherd/Footer/Footer";
 import MyOrders from "./pages/Dashboard/MyOrders";
+import MyReviews from "./pages/Dashboard/Dashboard/MyReviews";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<MyProfile />}></Route>
           <Route path="my-orders" element={<MyOrders />}></Route>
+          <Route path="my-reviews" element={<MyReviews />}></Route>
         </Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
