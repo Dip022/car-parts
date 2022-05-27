@@ -22,7 +22,9 @@ const Purchase = () => {
   if (loading) {
     return <Loading></Loading>;
   }
-  console.log(user);
+
+  const { name: productName, price, image, stock } = part;
+
   const handleOrderSubmit = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
@@ -42,6 +44,10 @@ const Purchase = () => {
       name,
       email,
       quantity: quantity,
+      productName: productName,
+      productPrice: price,
+      productImage: image,
+      productStock: stock,
       address1,
       address2,
       city,

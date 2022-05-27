@@ -23,6 +23,9 @@ const Dashboard = () => {
               <Link to="myProfile">My Profile</Link>
             </li>
             <li className="mb-4">
+              <Link to="my-orders">My Orders</Link>
+            </li>
+            <li className="mb-4">
               <Link to="">Make Admin</Link>
             </li>
             <li className="mb-4">
@@ -59,7 +62,8 @@ const Dashboard = () => {
           </label>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full p-8">
+        <h2 className="text-3xl text-primary">Welcome to your Dashboard</h2>
         <Outlet></Outlet>
       </div>
     </div>
