@@ -29,7 +29,7 @@ const Dashboard = () => {
               <Link to="my-reviews">My Reviews</Link>
             </li>
             <li className="mb-4">
-              <Link to="">Make Admin</Link>
+              <Link to="make-admin">Make Admin</Link>
             </li>
             <li className="mb-4">
               <Link to="">Manage All Orders</Link>

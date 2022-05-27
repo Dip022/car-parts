@@ -15,6 +15,7 @@ import PageNotFound from "./sherd/PageNotFound/PageNotFound";
 import Footer from "./sherd/Footer/Footer";
 import MyOrders from "./pages/Dashboard/MyOrders";
 import MyReviews from "./pages/Dashboard/Dashboard/MyReviews";
+import MakeAdmin from "./pages/Dashboard/Admin/MakeAdmin";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route index element={<MyProfile />}></Route>
           <Route path="my-orders" element={<MyOrders />}></Route>
           <Route path="my-reviews" element={<MyReviews />}></Route>
+          <Route path="make-admin" element={<MakeAdmin />}></Route>
         </Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
