@@ -4,7 +4,7 @@ const ManageProductsDeleteModal = ({ deletePart, setDeletePart, refetch }) => {
   const { _id } = deletePart;
 
   const handlePartDelete = (id) => {
-    fetch(`http://localhost:5000/part/${id}`, {
+    fetch(`https://quiet-dawn-51463.herokuapp.com/part/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access_token")}`,

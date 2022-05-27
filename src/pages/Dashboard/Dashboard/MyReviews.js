@@ -11,9 +11,9 @@ const MyReviews = () => {
   const email = user?.email;
 
   const { data: reviews, isLoading } = useQuery("reviewOrder", () =>
-    fetch(`http://localhost:5000/orderes-product/${email}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://quiet-dawn-51463.herokuapp.com/orderes-product/${email}`
+    ).then((res) => res.json())
   );
 
   if (loading || isLoading) {

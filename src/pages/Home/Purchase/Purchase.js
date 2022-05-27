@@ -14,7 +14,7 @@ const Purchase = () => {
   const [user, loading] = useAuthState(auth);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/part/${id}`)
+    fetch(`https://quiet-dawn-51463.herokuapp.com/part/${id}`)
       .then((res) => res.json())
       .then((data) => setPart(data));
   }, [id]);
@@ -58,7 +58,7 @@ const Purchase = () => {
 
     console.log(newOrder);
 
-    fetch("http://localhost:5000/order", {
+    fetch("https://quiet-dawn-51463.herokuapp.com/order", {
       method: "POST",
       headers: {
         "content-type": "application/json",

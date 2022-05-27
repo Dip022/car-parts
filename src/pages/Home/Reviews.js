@@ -5,7 +5,10 @@ import Loading from "../../sherd/Loading/Loading";
 const Reviews = () => {
   const { data: reviews, isLoading: reviewLoading } = useQuery(
     "allReviews",
-    () => fetch("http://localhost:5000/all-reviews").then((res) => res.json())
+    () =>
+      fetch("https://quiet-dawn-51463.herokuapp.com/all-reviews").then((res) =>
+        res.json()
+      )
   );
 
   if (reviewLoading) {

@@ -12,7 +12,9 @@ const MakeAdmin = () => {
     isLoading,
     refetch,
   } = useQuery("allUsers", () =>
-    fetch("http://localhost:5000/user").then((res) => res.json())
+    fetch("https://quiet-dawn-51463.herokuapp.com/user").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

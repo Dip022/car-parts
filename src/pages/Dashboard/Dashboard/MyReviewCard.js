@@ -27,7 +27,7 @@ const MyReviewCard = ({ review }) => {
 
     const newReview = { name, email, rating, message };
 
-    fetch(`http://localhost:5000/review/${_id}`, {
+    fetch(`https://quiet-dawn-51463.herokuapp.com/review/${_id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

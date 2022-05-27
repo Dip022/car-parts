@@ -5,7 +5,7 @@ const MakeAdminMOdal = ({ setUserDelete, userDelete, refetch }) => {
   const { _id } = userDelete;
 
   const deleteUserHandler = (id) => {
-    fetch(`http://localhost:5000/user/${id}`, {
+    fetch(`https://quiet-dawn-51463.herokuapp.com/user/${id}`, {
       method: "DELETE",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access_token")}`,

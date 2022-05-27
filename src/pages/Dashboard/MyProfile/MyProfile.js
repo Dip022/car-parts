@@ -48,7 +48,7 @@ const MyProfile = () => {
           };
 
           // update user to database
-          fetch(`http://localhost:5000/profile/${email}`, {
+          fetch(`https://quiet-dawn-51463.herokuapp.com/profile/${email}`, {
             method: "PUT",
             headers: {
               "content-type": "application/json",

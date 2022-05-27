@@ -8,7 +8,7 @@ const MakeAdminRow = ({ user, index, refetch, setUserDelete }) => {
   const { image, email, role } = user;
 
   const makeAdminHandler = () => {
-    fetch(`http://localhost:5000/user/admin/${email}`, {
+    fetch(`https://quiet-dawn-51463.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
       headers: {
         authorization: `Bearer ${localStorage.getItem("access_token")}`,

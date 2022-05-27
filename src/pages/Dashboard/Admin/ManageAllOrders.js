@@ -5,7 +5,9 @@ import ManageAllOrdersRow from "./ManageAllOrdersRow";
 
 const ManageAllOrders = () => {
   const { data: orders, isLoading } = useQuery("allOrders", () =>
-    fetch("http://localhost:5000/all-order").then((res) => res.json())
+    fetch("https://quiet-dawn-51463.herokuapp.com/all-order").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {

@@ -32,7 +32,7 @@ const AddProduct = () => {
             description: data.description,
           };
           console.log(newProduct);
-          fetch(`http://localhost:5000/new-product`, {
+          fetch(`https://quiet-dawn-51463.herokuapp.com/new-product`, {
             method: "POST",
             headers: {
               authorization: `Bearer ${localStorage.getItem("access_token")}`,

@@ -13,7 +13,9 @@ const ManageProducts = () => {
     isLoading,
     refetch,
   } = useQuery("allParts", () =>
-    fetch("http://localhost:5000/parts").then((res) => res.json())
+    fetch("https://quiet-dawn-51463.herokuapp.com/parts").then((res) =>
+      res.json()
+    )
   );
 
   if (isLoading) {
