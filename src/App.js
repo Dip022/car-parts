@@ -12,16 +12,17 @@ import Forgotten from "./pages/Login/Forgotten";
 import Dashboard from "./pages/Dashboard/Dashboard/Dashboard";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import PageNotFound from "./sherd/PageNotFound/PageNotFound";
+import Footer from "./sherd/Footer/Footer";
 
 function App() {
   return (
     <div>
-      <Header></Header>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/parts" element={<Parts />}></Route>
-        <Route path="/purchase" element={<Purchase />}></Route>
+        <Route path="/purchase/:id" element={<Purchase />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/forgotten" element={<Forgotten />}></Route>
@@ -30,6 +31,7 @@ function App() {
         </Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
+      <Footer />
       <ToastContainer />
     </div>
   );

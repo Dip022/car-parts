@@ -7,6 +7,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.inti";
 import Loading from "../../sherd/Loading/Loading";
 import { toast } from "react-toastify";
+import useToken from "../../Hooks/useToken";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -14,14 +15,16 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+  const [token] = useToken(user);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate("/home");
       toast.success("Sign in success");
     }
-  }, [user, navigate]);
+  }, [token, navigate]);
 
   if (loading) {
     return <Loading></Loading>;

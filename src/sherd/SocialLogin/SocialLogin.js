@@ -3,19 +3,22 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../../firebase.inti";
+import useToken from "../../Hooks/useToken";
 import google from "../../image/icon/google.png";
 
 const SocialLogin = () => {
   const [signInWithGoogle, user] = useSignInWithGoogle(auth);
 
+  const [token] = useToken(user);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
+    if (token) {
       toast.success("Login success");
       navigate("/home");
     }
-  }, [user, navigate]);
+  }, [token, navigate]);
 
   return (
     <div>

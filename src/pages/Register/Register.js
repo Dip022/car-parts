@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -9,23 +9,30 @@ import auth from "../../firebase.inti";
 import { toast } from "react-toastify";
 import Loading from "../../sherd/Loading/Loading";
 import SocialLogin from "../../sherd/SocialLogin/SocialLogin";
+import useToken from "../../Hooks/useToken";
 
 const Register = () => {
   const [passError, setPassError] = useState("");
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-
   const [updateProfile] = useUpdateProfile(auth);
+  const { register, handleSubmit } = useForm();
+
+  const [token] = useToken(user);
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm();
+  useEffect(() => {
+    if (token) {
+      toast.success("Register success");
+      navigate("/home");
+    }
+  }, [token, navigate]);
 
   if (loading) {
     return <Loading></Loading>;
   }
-  console.log(user);
 
   const onSubmit = async (data) => {
     if (data.password === data.confirmPassword) {
