@@ -16,6 +16,8 @@ import Footer from "./sherd/Footer/Footer";
 import MyOrders from "./pages/Dashboard/MyOrders";
 import MyReviews from "./pages/Dashboard/Dashboard/MyReviews";
 import MakeAdmin from "./pages/Dashboard/Admin/MakeAdmin";
+import RequireAuth from "./pages/Login/RequireAuth";
+import RequireAdmin from "./pages/Login/RequireAdmin";
 
 function App() {
   return (
@@ -25,15 +27,36 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/parts" element={<Parts />}></Route>
-        <Route path="/purchase/:id" element={<Purchase />}></Route>
+        <Route
+          path="/purchase/:id"
+          element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/forgotten" element={<Forgotten />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}>
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
           <Route index element={<MyProfile />}></Route>
           <Route path="my-orders" element={<MyOrders />}></Route>
           <Route path="my-reviews" element={<MyReviews />}></Route>
-          <Route path="make-admin" element={<MakeAdmin />}></Route>
+          <Route
+            path="make-admin"
+            element={
+              <RequireAdmin>
+                <MakeAdmin />
+              </RequireAdmin>
+            }
+          ></Route>
         </Route>
         <Route path="*" element={<PageNotFound />}></Route>
       </Routes>

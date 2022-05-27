@@ -1,15 +1,27 @@
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, Outlet } from "react-router-dom";
+import auth from "../../../firebase.inti";
+import useAdmin from "../../../Hooks/useAdmin";
+import Loading from "../../../sherd/Loading/Loading";
 import "./Dashboard.css";
 
 const Dashboard = () => {
+  const [user, loading] = useAuthState(auth);
   const [useMemu, setUseMenu] = useState(false);
 
-  console.log(useMemu);
+  const [admin] = useAdmin(user);
+
+  console.log("addddminnnnn", admin);
 
   const handelClick = () => {
     setUseMenu(!useMemu);
   };
+
+  if (loading) {
+    return <Loading></Loading>;
+  }
+
   return (
     <div className="flex truncate">
       <div
@@ -22,21 +34,29 @@ const Dashboard = () => {
             <li className="mb-4">
               <Link to="/dashboard">My Profile</Link>
             </li>
-            <li className="mb-4">
-              <Link to="my-orders">My Orders</Link>
-            </li>
-            <li className="mb-4">
-              <Link to="my-reviews">My Reviews</Link>
-            </li>
-            <li className="mb-4">
-              <Link to="make-admin">Make Admin</Link>
-            </li>
-            <li className="mb-4">
-              <Link to="">Manage All Orders</Link>
-            </li>
-            <li className="mb-4">
-              <Link to="">Manage Products</Link>
-            </li>
+            {admin || (
+              <>
+                <li className="mb-4">
+                  <Link to="my-orders">My Orders</Link>
+                </li>
+                <li className="mb-4">
+                  <Link to="my-reviews">My Reviews</Link>
+                </li>
+              </>
+            )}
+            {admin && (
+              <>
+                <li className="mb-4">
+                  <Link to="make-admin">Make Admin</Link>
+                </li>
+                <li className="mb-4">
+                  <Link to="">Manage All Orders</Link>
+                </li>
+                <li className="mb-4">
+                  <Link to="">Manage Products</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="absolute lg:static top-0 lg:hidden dashboard-memu text-white py-2 px-4 bg-gray-900">
