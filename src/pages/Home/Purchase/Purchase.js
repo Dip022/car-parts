@@ -66,7 +66,10 @@ const Purchase = () => {
       body: JSON.stringify(newOrder),
     })
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => {
+        toast.success("Order Success");
+        event.target.reset();
+      });
   };
 
   console.log(quantity);

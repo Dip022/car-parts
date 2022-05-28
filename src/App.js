@@ -21,6 +21,7 @@ import RequireAdmin from "./pages/Login/RequireAdmin";
 import ManageAllOrders from "./pages/Dashboard/Admin/ManageAllOrders";
 import ManageProducts from "./pages/Dashboard/Admin/ManageProducts";
 import AddProduct from "./pages/Dashboard/Admin/AddProduct";
+import Profile from "./pages/Home/Profile/Profile";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/parts" element={<Parts />}></Route>
+        <Route path="profile" element={<Profile />}></Route>
         <Route
           path="/purchase/:id"
           element={
@@ -41,6 +43,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/forgotten" element={<Forgotten />}></Route>
+
         <Route
           path="/dashboard"
           element={

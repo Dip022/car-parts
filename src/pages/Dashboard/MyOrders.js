@@ -12,12 +12,13 @@ const MyOrders = () => {
   const [cancleOrder, setCancleOrder] = useState(null);
 
   const email = user?.email;
+  console.log(email);
 
   const {
     data: orders,
     isLoading,
     refetch,
-  } = useQuery("cancleOrder", () =>
+  } = useQuery("cancleOrders", () =>
     fetch(
       `https://quiet-dawn-51463.herokuapp.com/orderes-product/${email}`
     ).then((res) => res.json())
@@ -46,7 +47,7 @@ const MyOrders = () => {
               </tr>
             </thead>
             <tbody>
-              {orders.map((order, index) => (
+              {orders?.map((order, index) => (
                 <MyOrdersRow
                   order={order}
                   key={order._id}

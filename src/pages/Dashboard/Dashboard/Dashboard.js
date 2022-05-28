@@ -88,7 +88,7 @@ const Dashboard = () => {
           </label>
         </div>
       </div>
-      <div className="w-full p-8">
+      <div className="w-full min-h-[700px] p-8">
         <h2 className="text-3xl text-primary">Welcome to your Dashboard</h2>
         <Outlet></Outlet>
       </div>

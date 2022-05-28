@@ -15,12 +15,17 @@ const Navbar = () => {
       <li>
         <Link to="/parts">Parts</Link>
       </li>
+
       <li>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/profile">Profile</Link>
       </li>
-      <li>
-        <Link to="/home">Home</Link>
-      </li>
+      {user ? (
+        <li>
+          <Link to="/dashboard">Dashboard</Link>
+        </li>
+      ) : (
+        <></>
+      )}
       {user ? (
         <li>
           <Link to="" onClick={() => signOut(auth)}>
