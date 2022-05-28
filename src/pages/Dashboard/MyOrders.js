@@ -12,7 +12,6 @@ const MyOrders = () => {
   const [cancleOrder, setCancleOrder] = useState(null);
 
   const email = user?.email;
-  console.log(email);
 
   const {
     data: orders,

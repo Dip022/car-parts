@@ -1,7 +1,7 @@
 import React from "react";
 
 const ReviewsCart = ({ review, avatar }) => {
-  const { img, name, message, rating } = review;
+  const { name, message, rating } = review;
   return (
     <div className="relative mt-24">
       <div className="lg:w-lg bg-base-100 shadow-xl">

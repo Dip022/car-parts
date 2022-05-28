@@ -12,8 +12,6 @@ const Dashboard = () => {
 
   const [admin] = useAdmin(user);
 
-  console.log("addddminnnnn", admin);
-
   const handelClick = () => {
     setUseMenu(!useMemu);
   };
@@ -26,7 +24,7 @@ const Dashboard = () => {
     <div className="flex truncate">
       <div
         className={`${
-          useMemu ? "left-0" : "-left-52"
+          useMemu ? "left-0" : "-left-40"
         } " bg-gray-900 pt-12 absolute lg:static h-auto px-8 truncate"`}
       >
         <div>

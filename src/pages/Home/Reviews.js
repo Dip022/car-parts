@@ -16,7 +16,6 @@ const Reviews = () => {
   if (reviewLoading) {
     return <Loading></Loading>;
   }
-  console.log(reviews);
   return (
     <div className="px-8 md:px-12 mb-16">
       <h1 className="text-center mt-28 mb-12 text-3xl font-bold text-primary">

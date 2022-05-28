@@ -42,7 +42,10 @@ const MakeAdminRow = ({ user, index, refetch, setUserDelete }) => {
       <td>
         {role ? role : "User"}
         {role === "admin" || (
-          <button onClick={makeAdminHandler} className="btn btn-accent">
+          <button
+            onClick={makeAdminHandler}
+            className="btn btn-accent w-28 ml-2"
+          >
             Make Admin
           </button>
         )}

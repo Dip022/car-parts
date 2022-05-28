@@ -50,7 +50,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div class="card w-full lg:w-[500px] bg-base-100 shadow-xl">
+      <div class="card w-full lg:w-[500px] bg-base-100 shadow-xl px-8 py-5">
         <div class="card-body">
           <h2 class="card-title">Add A New Product</h2>
         </div>
@@ -68,7 +68,7 @@ const AddProduct = () => {
           </div>
           <div className="mt-6">
             <div className="mt-4">
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Product Name:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -78,7 +78,7 @@ const AddProduct = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto4">
                 <label htmlFor="">Description:</label>
                 <textarea
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -87,7 +87,7 @@ const AddProduct = () => {
                   placeholder="Description"
                 ></textarea>
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Price:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -97,7 +97,7 @@ const AddProduct = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Stock:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"

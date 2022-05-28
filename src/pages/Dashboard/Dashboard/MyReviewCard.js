@@ -43,12 +43,12 @@ const MyReviewCard = ({ review }) => {
       });
   };
   return (
-    <div class="card xl:max-w-xl lg:max-w-lg card-side bg-base-100 shadow-xl">
+    <div className="card xl:max-w-xl lg:max-w-lg card-side bg-base-100 shadow-xl">
       <figure>
         <img className="w-24" src={productImage} alt="Movie" />
       </figure>
-      <div class="card-body">
-        <h2 class="card-title">{productName}</h2>
+      <div className="card-body">
+        <h2 className="card-title">{productName}</h2>
         <h4>Price: ${productPrice}</h4>
         <h4>Quantity: {quantity}</h4>
         <form onSubmit={handleReview} action="">
@@ -59,20 +59,20 @@ const MyReviewCard = ({ review }) => {
             className="input input-bordered"
           />
           <div>
-            <div class="rating">
+            <div className="rating">
               <input
                 value="1"
                 onClick={(e) => setUserRating(e.target.value)}
                 type="radio"
                 name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
               />
               <input
                 value="2"
                 onClick={(e) => setUserRating(e.target.value)}
                 type="radio"
                 name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
                 checked
               />
               <input
@@ -80,26 +80,26 @@ const MyReviewCard = ({ review }) => {
                 onClick={(e) => setUserRating(e.target.value)}
                 type="radio"
                 name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
               />
               <input
                 value="4"
                 onClick={(e) => setUserRating(e.target.value)}
                 type="radio"
                 name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
               />
               <input
                 value="5"
                 onClick={(e) => setUserRating(e.target.value)}
                 type="radio"
                 name="rating-2"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
               />
             </div>
           </div>
-          <div class="card-actions justify-end">
-            <button type="submit" class="btn btn-primary">
+          <div className="card-actions justify-end">
+            <button type="submit" className="btn btn-primary">
               Review
             </button>
           </div>

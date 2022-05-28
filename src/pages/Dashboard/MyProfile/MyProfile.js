@@ -70,17 +70,21 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="pl-12 pt-12">
-      <h2 className="text-4xl font-bold text-primary mb-4">
+    <div className="pl-0 md:pl-12 pt-12">
+      <h2 className="text-2xl md:text-4xl font-bold text-primary mb-4">
         Welcome to your dashboard
       </h2>
       <div>
-        <h2 className="text-3xl font-bold text-red-500 mb-4">
+        <h2 className="text-2xl md:text-3xl font-bold text-red-500 mb-4">
           Edit Infomation
         </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex items-center">
-            <img className="w-36 mr-4" src={user?.photoURL || avater} alt="" />
+            <img
+              className="w-28 md:w-36 mr-4"
+              src={user?.photoURL || avater}
+              alt=""
+            />
             <input
               type="file"
               {...register("image", {
@@ -92,9 +96,9 @@ const MyProfile = () => {
             />
           </div>
           <div className="mt-6">
-            <h2 className="text-3xl">Account Information</h2>
+            <h2 className="text-2xl md:text-3xl">Account Information</h2>
             <div className="mt-4">
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Full Name:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -104,7 +108,7 @@ const MyProfile = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className=" text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Email Address:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -114,7 +118,7 @@ const MyProfile = () => {
                   disabled
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Phone Number:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -124,7 +128,7 @@ const MyProfile = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Address Line 1:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -134,7 +138,7 @@ const MyProfile = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Address Line 2:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -144,7 +148,7 @@ const MyProfile = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">City:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -154,7 +158,7 @@ const MyProfile = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">State:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
@@ -164,7 +168,7 @@ const MyProfile = () => {
                   required
                 />
               </div>
-              <div className="text-xl mb-4">
+              <div className="text-md md:text-xl mb-4 w-52 md:w-auto">
                 <label htmlFor="">Postal Code:</label>
                 <input
                   className="input input-bordered w-full max-w-xs ml-2"
