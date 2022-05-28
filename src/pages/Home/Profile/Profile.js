@@ -3,7 +3,7 @@ import photo from "../../../image/my-photo.jpg";
 
 const Profile = () => {
   return (
-    <div className="">
+    <div className="px-8">
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img src={photo} alt="" />
@@ -14,11 +14,13 @@ const Profile = () => {
             </h1>
 
             <p className="py-6">
-              My name is Dipon Roy. I have been doing various works and projects
-              in web development for over 1 year. I chose the job of web
-              development as a profession. Because I'm attracted to web
+              MMy name is Dipon Roy. I have been doing various works and
+              projects in web development for over 1 year. I chose the job of
+              web development as a profession. Because I'm attracted to web
               development. Which is why I always like to tackle new types of
-              challenges. I am always steadfast towards my goal.
+              challenges. I am always steadfast towards my goal. I want to use
+              all my experience to move forward. I always find myself in
+              learning
             </p>
             <button className="btn btn-primary">Get Started</button>
           </div>
@@ -58,7 +60,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className="mt-12">
+          <div className="mt-12 lg:w-1/2 w-full mx-auto">
             <h4 className="text-3xl font-semibold ">My OWN Projects</h4>
             <hr className="mt-2" />
             <div className="mt-4">

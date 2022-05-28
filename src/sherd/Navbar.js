@@ -19,6 +19,9 @@ const Navbar = () => {
       <li>
         <Link to="/profile">Profile</Link>
       </li>
+      <li>
+        <Link to="/blog">Blog</Link>
+      </li>
       {user ? (
         <li>
           <Link to="/dashboard">Dashboard</Link>
