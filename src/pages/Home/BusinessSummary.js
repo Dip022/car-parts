@@ -21,8 +21,6 @@ const BusinessSummary = () => {
     )
   );
 
-  console.log(orders);
-
   if (reviewLoading || orderLoading) {
     return <Loading></Loading>;
   }
