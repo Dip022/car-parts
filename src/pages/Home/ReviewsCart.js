@@ -1,20 +1,21 @@
 import React from "react";
 
-const ReviewsCart = ({ product }) => {
-  const { img, name, dd, reting } = product;
+const ReviewsCart = ({ review, avatar }) => {
+  const { img, name, message, rating } = review;
   return (
     <div className="relative mt-24">
-      <div class="lg:w-lg bg-base-100 shadow-xl">
+      <div className="lg:w-lg bg-base-100 shadow-xl">
         <div className="mb-5">
-          <div class="avatar absolute -top-14">
-            <div class="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-              <img src={img} alt="" />
+          <div className="avatar absolute -top-14">
+            <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+              <img src={avatar} alt="" />
             </div>
           </div>
         </div>
-        <div class="card-body">
-          <h2 class="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
+          <p>{message}</p>
+          <p>Rating: {rating} Start</p>
         </div>
       </div>
     </div>

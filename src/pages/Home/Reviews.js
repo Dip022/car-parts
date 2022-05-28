@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import Loading from "../../sherd/Loading/Loading";
-import download from "./download.png";
+import avatar from "../../image/avatar/avatar.png";
 import ReviewsCart from "./ReviewsCart";
 
 const Reviews = () => {
@@ -16,23 +16,19 @@ const Reviews = () => {
   if (reviewLoading) {
     return <Loading></Loading>;
   }
-
-  const products = [
-    { id: 1, img: download, name: "balpe", dd: "best quality", reting: 5 },
-    { id: 2, img: download, name: "balpe", dd: "best quality", reting: 5 },
-    { id: 3, img: download, name: "balpe", dd: "best quality", reting: 5 },
-    { id: 4, img: download, name: "balpe", dd: "best quality", reting: 5 },
-    { id: 5, img: download, name: "balpe", dd: "best quality", reting: 5 },
-    { id: 6, img: download, name: "balpe", dd: "best quality", reting: 5 },
-  ];
+  console.log(reviews);
   return (
     <div className="px-8 md:px-12 mb-16">
       <h1 className="text-center mt-28 mb-12 text-3xl font-bold text-primary">
         Reviews
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-        {products.slice(0, 6).map((product) => (
-          <ReviewsCart product={product} key={product.id}></ReviewsCart>
+        {reviews.map((review) => (
+          <ReviewsCart
+            review={review}
+            key={review._id}
+            avatar={avatar}
+          ></ReviewsCart>
         ))}
       </div>
     </div>

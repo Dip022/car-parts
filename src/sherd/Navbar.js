@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../firebase.inti";
 import { signOut } from "firebase/auth";
+import logo from "../image/logo.png";
 
 const Navbar = () => {
   const [user] = useAuthState(auth);
@@ -74,7 +75,7 @@ const Navbar = () => {
             {menuItem}
           </ul>
         </div>
-        <span className="btn btn-ghost normal-case text-xl">daisyUI</span>
+        <img src={logo} alt="" className="w-20" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal justify-between p-0 text-1.5xl">
