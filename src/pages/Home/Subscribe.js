@@ -9,6 +9,7 @@ const Subscribe = () => {
             type="text"
             placeholder="Your Email Address"
             className="input w-full"
+            required
           />
           <button className="btn ">Subscribe</button>
         </div>
